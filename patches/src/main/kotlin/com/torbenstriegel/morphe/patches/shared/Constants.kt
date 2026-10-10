@@ -41,4 +41,16 @@ object Constants {
             )
         )
     )
+
+    val COMPATIBILITY_SAI = Compatibility(
+        name = "SAI Split APKs Installer",
+        packageName = "com.mtv.sai",
+        apkFileType = ApkFileType.XAPK,
+        appIconColor = 0x1976D2,
+        targets = listOf(
+            AppTarget(
+                version = "2.4.2"
+            )
+        )
+    )
 }
