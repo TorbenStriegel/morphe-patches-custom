@@ -53,4 +53,17 @@ object Constants {
             )
         )
     )
+
+    val COMPATIBILITY_TORALARM = Compatibility(
+        name = "Toralarm",
+        packageName = "com.eisterhues_media_2",
+        apkFileType = ApkFileType.XAPK,
+        appIconColor = 0x73B285,
+        targets = listOf(
+            AppTarget(
+                version = "7.6.3",
+                versionCode = 202609180
+            )
+        )
+    )
 }
