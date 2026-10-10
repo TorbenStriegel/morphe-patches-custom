@@ -1,14 +1,13 @@
-group = "app.template"
+group = "com.torbenstriegel"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
-        contact = "na"
-        website = "na"
+        name = "TorbenStriegel Patches"
+        description = "Patches for apps I use: Weather&Radar, Skat and more to come."
+        source = "git@github.com:TorbenStriegel/morphe-patches-custom.git"
+        author = "Torben Striegel"
+        contact = "https://github.com/TorbenStriegel"
+        website = "https://github.com/TorbenStriegel/morphe-patches-custom"
         license = "GPLv3"
     }
 }

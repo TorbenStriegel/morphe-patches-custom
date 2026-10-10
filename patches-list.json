@@ -1,5 +1,58 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "0.0.0",
-  "patches": []
+  "version": "1.0.0",
+  "patches": [
+    {
+      "name": "Enable Premium",
+      "description": "Enables premium features: ad-free experience, HD radar and all gated content. Works without an account.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "de.wetteronline.wetterapp",
+          "name": "Weather&Radar",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#10658E",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "2026.19",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Remove Ads",
+      "description": "Removes banner and fullscreen (interstitial) ads from the game. Interstitials are reported as shown and closed immediately so the Qt game flow is unaffected. Works without an account.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "com.isarinteractive.skat.android.ad",
+          "name": "Skat",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#870800",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "19.2.4",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    }
+  ]
 }
