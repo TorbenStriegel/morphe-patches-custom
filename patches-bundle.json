@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-10T21:49:41",
-  "description": "## [1.5.1](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.5.0...v1.5.1) (2026-10-10)\n\n### 🐛 Bug Fixes\n\n* **sai:** replace isActive reads with const/4 0x1 instead of removing branches (crash fix) ([c100c12](https://github.com/TorbenStriegel/morphe-patches-custom/commit/c100c12076e9e40c4bfead09b78fea8c942231fc))",
-  "download_url": "https://github.com/TorbenStriegel/morphe-patches-custom/releases/download/v1.5.1/patches-1.5.1.mpp",
+  "created_at": "2026-10-10T22:23:44",
+  "description": "## [1.6.0](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.5.1...v1.6.0) (2026-10-10)\n\n### ✨ New Features\n\n* **ntv:** add Unlock ntv Plus patch (premium + ad-free) ([ec27384](https://github.com/TorbenStriegel/morphe-patches-custom/commit/ec273849e3302e343532766e705afffda87e7abb))",
+  "download_url": "https://github.com/TorbenStriegel/morphe-patches-custom/releases/download/v1.6.0/patches-1.6.0.mpp",
   "signature_download_url": "",
-  "version": "1.5.1"
+  "version": "1.6.0"
 }

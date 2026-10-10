@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "patches": [
     {
       "name": "Disable ads",
@@ -184,6 +184,37 @@
                 "ARMEABI_V7A": 202609180,
                 "X86_64": 202609180,
                 "X86": 202609180
+              },
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Unlock ntv Plus",
+      "description": "Unlocks ntv Plus premium features (ad-free, premium content) by forcing the subscription state to active.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "de.lineas.lit.ntv.android",
+          "name": "ntv",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#FFCC00",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "8.5.7.1",
+              "versionCodes": {
+                "ARM64_V8A": 586,
+                "ARMEABI_V7A": 586,
+                "X86_64": 586,
+                "X86": 586
               },
               "isExperimental": false,
               "minSdk": null,

@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.5.1...v1.6.0) (2026-10-10)
+
+### ✨ New Features
+
+* **ntv:** add Unlock ntv Plus patch (premium + ad-free) ([ec27384](https://github.com/TorbenStriegel/morphe-patches-custom/commit/ec273849e3302e343532766e705afffda87e7abb))
+
 ## [1.5.1](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.5.0...v1.5.1) (2026-10-10)
 
 ### 🐛 Bug Fixes
