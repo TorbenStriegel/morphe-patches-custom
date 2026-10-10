@@ -66,4 +66,17 @@ object Constants {
             )
         )
     )
+
+    val COMPATIBILITY_NTV = Compatibility(
+        name = "ntv",
+        packageName = "de.lineas.lit.ntv.android",
+        apkFileType = ApkFileType.XAPK,
+        appIconColor = 0xFFCC00,
+        targets = listOf(
+            AppTarget(
+                version = "8.5.7.1",
+                versionCode = 586
+            )
+        )
+    )
 }
