@@ -1,8 +1,7 @@
 package com.torbenstriegel.morphe.patches.sai.premium
 
 import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
-import app.morphe.patcher.extensions.InstructionExtensions.removeInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import com.android.tools.smali.dexlib2.AccessFlags
@@ -80,29 +79,32 @@ private val PremiumStateWriterFingerprint = Fingerprint(
 )
 
 /**
- * Removes the first IF_* branch after each `iget-boolean ... Lxa2;->b:Z` read,
- * so the "not active" exit of the method can never be taken.
+ * Ersetzt JEDE `iget-boolean vX, vY, Lxa2;->b:Z` (Entitlement.isActive-Read)
+ * durch `const/4 vX, 0x1`, sodass der übrige Kontrollfluss UNVERÄNDERT
+ * bleibt und immer der Premium-Zweig genommen wird.
+ *
+ * 2026-10-10 Fix: removeNotActiveBranch (if-Entfernung nach jedem Read) war
+ * zu aggressiv - tj0.h hat ZWEI b:Z-Reads und der Folge-if des zweiten ist
+ * Teil eines UNBETEILIGTEN Zweigs (:cond_1/:cond_8). Drei entfernte ifs rissen
+ * den Kontrollfluss in sj0 (Coroutine) auf -> ClassCastException
+ * "tj0 cannot be cast to dy7" beim App-Start. Read-Ersetzung ist
+ * register-sicher (dest-Register bleibt definiert, src wird nur nicht mehr
+ * benutzt) und laesst alle Labels/Branches intakt.
  */
-private fun removeNotActiveBranch(m: MutableMethod) {
+private fun forceIsActive(m: MutableMethod) {
     val insns = m.implementation!!.instructions.toList()
-    val ifIndices = mutableListOf<Int>()
+    var n = 0
     for (i in insns.indices) {
         val ins = insns[i]
         if (ins.opcode.name == "iget-boolean" &&
             (ins as? ReferenceInstruction)?.reference?.toString()?.contains("Lxa2;->b:Z") == true
         ) {
-            for (j in i + 1 until insns.size) {
-                if (insns[j].opcode.name.startsWith("if-")) {
-                    ifIndices.add(j)
-                    break
-                }
-            }
+            val reg = (ins as? OneRegisterInstruction)?.registerA ?: continue
+            m.replaceInstruction(i, "const/4 v$reg, 0x1")
+            n++
         }
     }
-    if (ifIndices.isEmpty()) {
-        error("SAI premium isActive pattern not found in ${m.definingClass}")
-    }
-    ifIndices.sortedDescending().forEach { m.removeInstruction(it) }
+    if (n == 0) error("SAI premium isActive pattern not found in ${m.definingClass}")
 }
 
 @Suppress("unused")
@@ -114,29 +116,22 @@ val saiPremiumPatch = bytecodePatch(
     compatibleWith(COMPATIBILITY_SAI)
 
     execute {
-        // Lambda 1 + 2: drop the "not active" branch -> always report premium.
-        removeNotActiveBranch(PremiumLambda1ArgFingerprint.method)
-        removeNotActiveBranch(PremiumLambdaFingerprint.method)
+        // Lambda 1 + 2: isActive-Reads zu true zwingen -> immer premium
+        // melden, Kontrollfluss unveraendert.
+        forceIsActive(PremiumLambda1ArgFingerprint.method)
+        forceIsActive(PremiumLambdaFingerprint.method)
 
         // Central calculator: keep it running but always yield "active".
-        val h = PremiumStateWriterFingerprint.method
-        val hInsns = h.implementation!!.instructions.toList()
-        // Flip the fallback `const/4 v1, 0x0` (right after the cast to Lxa2;) to 0x1,
-        // so the "entitlement missing" path also yields premium.
-        val castIdx = hInsns.indexOfFirst {
-            it.opcode.name == "check-cast" &&
-                (it as? ReferenceInstruction)?.reference?.toString()?.contains("Lxa2;") == true
-        }
-        if (castIdx < 0) error("SAI premium cast target not found in ${h.definingClass}")
-        val fallbackIdx = hInsns.indices.firstOrNull { it > castIdx &&
-            hInsns[it].opcode.name == "const/4" &&
-            hInsns[it] is NarrowLiteralInstruction &&
-            (hInsns[it] as NarrowLiteralInstruction).wideLiteral == 0L &&
-            (hInsns[it] as OneRegisterInstruction).registerA == 1 }
-        if (fallbackIdx == null) error("SAI premium fallback const not found in ${h.definingClass}")
-        h.removeInstruction(fallbackIdx)
-        h.addInstructions(fallbackIdx, "const/4 v1, 0x1")
-        // Drop the "not active" exits of the calculator itself.
-        removeNotActiveBranch(h)
+        // 2026-10-10 (zweiter Fix): ALLE b:Z-Reads zu const/4 0x1 und KEINEN
+        // v1-Fallback-Flip mehr. Der naechste Fehler war (Stacktrace bewiesen):
+        // v1 wird am Ende von tj0.h als Coroutine-Typ-Index an
+        // sj0.<init>(Object;Z;Lge1;I) uebergeben -> v1: 0->1 verschob den
+        // packed-switch in sj0.create von pswitch_4 (check-cast Ltj0;) auf
+        // pswitch_0 (check-cast Ldy7;) -> ClassCastException "tj0 cannot be
+        // cast to dy7" beim App-Start. Der v1-Fallback ist also NICHT nur ein
+        // Premium-Bool, sondern hat die Doppelfunktion Coroutine-Klasse.
+        // Nur die b:Z-Reads zwingen reicht fuer den Premium-Pfad; der
+        // ent-itlement-missing-Pfad bleibt original (schadet nicht).
+        forceIsActive(PremiumStateWriterFingerprint.method)
     }
 }
