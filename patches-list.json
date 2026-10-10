@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "patches": [
     {
       "name": "Disable ads",
@@ -101,6 +101,32 @@
           "targets": [
             {
               "version": "2.4.2",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Remove Play Store redirect",
+      "description": "Removes the PairIP license check that redirects to the Play Store and exits on sideloaded installs.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "com.isarinteractive.skat.android.ad",
+          "name": "Skat",
+          "description": null,
+          "apkFileType": "XAPK",
+          "appIconColor": "#870800",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "19.2.4",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
