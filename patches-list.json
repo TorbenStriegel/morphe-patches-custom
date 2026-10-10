@@ -3,6 +3,37 @@
   "version": "1.0.0",
   "patches": [
     {
+      "name": "Disable ads",
+      "description": "Disables banner, interstitial, native, app-open and rewarded ads.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "de.motain.iliga",
+          "name": "OneFootball",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#00C853",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "15.145.0",
+              "versionCodes": {
+                "ARM64_V8A": 1044999406,
+                "ARMEABI_V7A": 1044999406,
+                "X86_64": 1044999406,
+                "X86": 1044999406
+              },
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Enable Premium",
       "description": "Enables premium features: ad-free experience, HD radar and all gated content. Works without an account.",
       "default": true,
@@ -18,39 +49,6 @@
           "targets": [
             {
               "version": "2026.19",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "options": []
-    },
-    {
-      "name": "Example Patch",
-      "description": "Example patch to start with.",
-      "default": true,
-      "category": null,
-      "compatiblePackages": [
-        {
-          "packageName": "com.example.app",
-          "name": "XYZ app",
-          "description": null,
-          "apkFileType": "APK",
-          "appIconColor": "#FF0045",
-          "signatures": null,
-          "targets": [
-            {
-              "version": "2.0.0",
-              "versionCodes": null,
-              "isExperimental": false,
-              "minSdk": null,
-              "description": null
-            },
-            {
-              "version": "1.0.2",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,

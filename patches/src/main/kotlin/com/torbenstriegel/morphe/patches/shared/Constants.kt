@@ -28,4 +28,17 @@ object Constants {
             )
         )
     )
+
+    val COMPATIBILITY_ONEFOOTBALL = Compatibility(
+        name = "OneFootball",
+        packageName = "de.motain.iliga",
+        apkFileType = ApkFileType.APKM,
+        appIconColor = 0x00C853,
+        targets = listOf(
+            AppTarget(
+                version = "15.145.0",
+                versionCode = 1044999406
+            )
+        )
+    )
 }
