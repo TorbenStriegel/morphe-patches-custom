@@ -1,3 +1,9 @@
+## [1.7.1](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.0...v1.7.1) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **ntv:** support version 8.6.0.1 ([4c05a89](https://github.com/TorbenStriegel/morphe-patches-custom/commit/4c05a891bc74f58337b4842779412a73dd36f16b))
+
 ## [1.7.0](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.6.0...v1.7.0) (2026-11-04)
 
 ### ✨ New Features
