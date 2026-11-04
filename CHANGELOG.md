@@ -1,3 +1,9 @@
+## [1.7.2](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.1...v1.7.2) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **wetterradar:** support version 2026.21 ([a9ba3a6](https://github.com/TorbenStriegel/morphe-patches-custom/commit/a9ba3a684ae223ac555777ffc75f11b1160f5c23))
+
 ## [1.7.1](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.0...v1.7.1) (2026-11-04)
 
 ### 🐛 Bug Fixes
