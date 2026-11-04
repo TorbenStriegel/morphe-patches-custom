@@ -42,18 +42,6 @@ object Constants {
         )
     )
 
-    val COMPATIBILITY_SAI = Compatibility(
-        name = "SAI Split APKs Installer",
-        packageName = "com.mtv.sai",
-        apkFileType = ApkFileType.XAPK,
-        appIconColor = 0x1976D2,
-        targets = listOf(
-            AppTarget(
-                version = "2.4.2"
-            )
-        )
-    )
-
     val COMPATIBILITY_TORALARM = Compatibility(
         name = "Toralarm",
         packageName = "com.eisterhues_media_2",
@@ -76,6 +64,32 @@ object Constants {
             AppTarget(
                 version = "8.5.7.1",
                 versionCode = 586
+            )
+        )
+    )
+
+    val COMPATIBILITY_CHARGEPRICE = Compatibility(
+        name = "Chargeprice",
+        packageName = "fr.chargeprice.app",
+        apkFileType = ApkFileType.XAPK,
+        appIconColor = 0x007AFF,
+        targets = listOf(
+            AppTarget(
+                version = "4.4.0",
+                versionCode = 44000000
+            )
+        )
+    )
+
+    val COMPATIBILITY_PARK4NIGHT = Compatibility(
+        name = "Park4Night",
+        packageName = "fr.tramb.park4night",
+        apkFileType = ApkFileType.XAPK,
+        appIconColor = 0x4CAF50,
+        targets = listOf(
+            AppTarget(
+                version = "7.1.62",
+                versionCode = 378
             )
         )
     )
