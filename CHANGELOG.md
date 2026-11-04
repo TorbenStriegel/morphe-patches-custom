@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.6.0...v1.7.0) (2026-11-04)
+
+### ✨ New Features
+
+* **chargeprice:** add Unlock Premium patch without login ([927b675](https://github.com/TorbenStriegel/morphe-patches-custom/commit/927b675430921c00ee3043f00ed85b1e88f109ef))
+* **park4night:** add Unlock Premium patch ([7bdf9ac](https://github.com/TorbenStriegel/morphe-patches-custom/commit/7bdf9aca85043df8b66f41300ed16b79e227719a))
+
 ## [1.6.0](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.5.1...v1.6.0) (2026-10-10)
 
 ### ✨ New Features
