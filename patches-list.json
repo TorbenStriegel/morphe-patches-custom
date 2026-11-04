@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "patches": [
     {
       "name": "Disable ads",
@@ -23,6 +23,18 @@
                 "ARMEABI_V7A": 1044999406,
                 "X86_64": 1044999406,
                 "X86": 1044999406
+              },
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": "15.148.0",
+              "versionCodes": {
+                "ARM64_V8A": 1045029590,
+                "ARMEABI_V7A": 1045029590,
+                "X86_64": 1045029590,
+                "X86": 1045029590
               },
               "isExperimental": false,
               "minSdk": null,

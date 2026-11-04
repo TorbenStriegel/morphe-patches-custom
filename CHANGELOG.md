@@ -1,3 +1,9 @@
+## [1.7.3](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.2...v1.7.3) (2026-11-04)
+
+### 🐛 Bug Fixes
+
+* **onefootball:** support version 15.148.0 ([523c83c](https://github.com/TorbenStriegel/morphe-patches-custom/commit/523c83c4a3eedb5ca5818bd7504ba495f90c243a))
+
 ## [1.7.2](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.1...v1.7.2) (2026-11-04)
 
 ### 🐛 Bug Fixes

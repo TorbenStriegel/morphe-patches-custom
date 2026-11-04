@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-04T20:35:33",
-  "description": "## [1.7.2](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.1...v1.7.2) (2026-11-04)\n\n### 🐛 Bug Fixes\n\n* **wetterradar:** support version 2026.21 ([a9ba3a6](https://github.com/TorbenStriegel/morphe-patches-custom/commit/a9ba3a684ae223ac555777ffc75f11b1160f5c23))",
-  "download_url": "https://github.com/TorbenStriegel/morphe-patches-custom/releases/download/v1.7.2/patches-1.7.2.mpp",
+  "created_at": "2026-11-04T21:18:32",
+  "description": "## [1.7.3](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.2...v1.7.3) (2026-11-04)\n\n### 🐛 Bug Fixes\n\n* **onefootball:** support version 15.148.0 ([523c83c](https://github.com/TorbenStriegel/morphe-patches-custom/commit/523c83c4a3eedb5ca5818bd7504ba495f90c243a))",
+  "download_url": "https://github.com/TorbenStriegel/morphe-patches-custom/releases/download/v1.7.3/patches-1.7.3.mpp",
   "signature_download_url": "",
-  "version": "1.7.2"
+  "version": "1.7.3"
 }
