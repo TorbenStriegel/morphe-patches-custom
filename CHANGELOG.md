@@ -1,3 +1,9 @@
+## [1.8.0](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.3...v1.8.0) (2026-11-04)
+
+### ✨ New Features
+
+* **onefootball:** hide match shop and betting promotions ([3af0d18](https://github.com/TorbenStriegel/morphe-patches-custom/commit/3af0d187eaecd7b731201794a1014ffe61810a98))
+
 ## [1.7.3](https://github.com/TorbenStriegel/morphe-patches-custom/compare/v1.7.2...v1.7.3) (2026-11-04)
 
 ### 🐛 Bug Fixes
