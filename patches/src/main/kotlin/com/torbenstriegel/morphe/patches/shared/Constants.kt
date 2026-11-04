@@ -42,6 +42,10 @@ object Constants {
             AppTarget(
                 version = "15.145.0",
                 versionCode = 1044999406
+            ),
+            AppTarget(
+                version = "15.148.0",
+                versionCode = 1045029590
             )
         )
     )
