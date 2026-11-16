@@ -93,6 +93,19 @@ object Constants {
         )
     )
 
+    val COMPATIBILITY_WARNWETTER = Compatibility(
+        name = "WarnWetter",
+        packageName = "de.dwd.warnapp",
+        apkFileType = ApkFileType.APK,
+        appIconColor = 0x465FA1,
+        targets = listOf(
+            AppTarget(
+                version = "5.4.2",
+                versionCode = 5425
+            )
+        )
+    )
+
     val COMPATIBILITY_PARK4NIGHT = Compatibility(
         name = "Park4Night",
         packageName = "fr.tramb.park4night",
